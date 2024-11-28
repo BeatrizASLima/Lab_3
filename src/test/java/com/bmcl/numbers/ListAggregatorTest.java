@@ -35,4 +35,11 @@ public class ListAggregatorTest {
         int distinct = aggregator.distinct(list);
         Assertions.assertEquals(4, distinct);
     }
+    @Test
+    public void max_bug_7263() {
+        ListAggregator aggregator = new ListAggregator();
+        int max = aggregator.max(Arrays.asList(-1, -4, -5));
+        Assertions.assertEquals(-1, max);
+    }
+
 }
