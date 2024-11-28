@@ -9,6 +9,7 @@ import java.util.List;
 public class ListAggregator {
     /**
      * Sums all numbers in a list.
+     *
      * @return The sum of all the values in the list.
      */
     public Integer sum(List<Integer> list) {
@@ -22,20 +23,20 @@ public class ListAggregator {
 
     /**
      * Calculates the maximum value in a list.
+     *
      * @return The maximum value in the list.
      */
     public Integer max(List<Integer> list) {
-        int max = 0;
-
+        // int max = 0;
+        int max = Integer.MIN_VALUE;
         for (Integer number : list)
             if (number > max)
                 max = number;
-
         return max;
     }
-
     /**
      * Calculates the minimum value in a list.
+     *
      * @return The minimum value in the list.
      */
     public Integer min(List<Integer> list) {
@@ -50,12 +51,12 @@ public class ListAggregator {
 
     /**
      * Counts the number of distinct numbers in a list.
+     *
      * @return The number of distinct numbers.
      */
-    public int distinct(List<Integer> list) {
-        ListDeduplicator deduplicator = new ListDeduplicator();
+    public int distinct(List<Integer> list, GenericListDeduplicator deduplicator) {
         List<Integer> distinct = deduplicator.deduplicate(list);
-
         return distinct.size();
     }
 }
+

@@ -1,16 +1,21 @@
 package com.bmcl.numbers;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 /**
- * An utility class that removes duplicate numbers
+ *  utility class that removes duplicate numbers
  * from a list.
  */
-public class ListDeduplicator {
+public class ListDeduplicator implements GenericListDeduplicator{
+    public interface GenericListDeduplicator {
+        public List<Integer> deduplicate(List<Integer> list);
+    }
 
     /**
      * Removes duplicate numbers from a list.
+     *
      * @return A list having the same numbers as the original
      * but withou duplicates. The order of the numbers might
      * change.
@@ -30,4 +35,6 @@ public class ListDeduplicator {
 
         return unique;
     }
+
 }
+

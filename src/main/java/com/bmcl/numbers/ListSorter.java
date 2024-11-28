@@ -1,15 +1,28 @@
 package com.bmcl.numbers;
 
 import java.util.ArrayList;
+
 import java.util.Collections;
 import java.util.List;
 
 /**
- * An utility class to sort list of numbers.
+ * utility class to sort list of numbers.
  */
 public class ListSorter {
+        public List<Integer> deduplicate(List<Integer> list) {
+            List<Integer> sorted = sorter.sort(list);
+            List<Integer> unique = new ArrayList<>();
+            Integer last = null;
+            for (Integer number : sorted)
+                if (!number.equals(last)) {
+                    last = number;
+                    unique.add(number);
+                }
+            return unique;
+        }
     /**
      * Really stupid way to sort a list.
+     *
      * @return A sorted version of the list.
      */
     public List<Integer> sort(List<Integer> list) {
@@ -25,3 +38,5 @@ public class ListSorter {
         return sorted;
     }
 }
+    //COMECAÇA O EXERCICIO
+
